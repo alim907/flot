@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Box Whisker Plot Flot Example</title>
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="../jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.boxwhisker.js"></script>
+ </head>
+    <body>
+    <h1>Flot Examples</h1>
+
+    <div id="placeholder" style="width:600px;height:300px;"></div>
+
+    <p>Creating box whisker plots with flot.</p>
+
+<script type="text/javascript">
+$(function () {
+    var data = []
+    for (var s = 0; s < 6; ++s) {
+        var start = parseInt(Math.random() * 20) + 10;
+        var end = 90 - parseInt(Math.random() * 20)
+        var d = []
+        for (var i = 0; i < 100; ++i) {
+            d.push(start + parseInt(Math.random() * (end - start)));
+        }
+        d.sort(function (a, b) { return a - b; })
+        data.push( { label: "series " + (s+1), data: [ [1,d[0]], [2,d[24]], [3,d[49]], [4,d[74]], [5,d[99]] ] } );
+    }
+    $.plot($("#placeholder"), data, {
+        series: { boxwhisker: { show: true, useColor: true, boxWidth: 0.4, lineWidth: 0.5 }, shadowSize: 3 },
+        legend: { show: false }
+    });
+});
+</script>
+
+ </body>
+</html>
