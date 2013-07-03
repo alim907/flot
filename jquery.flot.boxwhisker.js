@@ -74,18 +74,11 @@
             ctx.lineTo(s_x + s_w, s_max);
             ctx.stroke();
         }
-        var shadowOffset = (series.shadowSize != null) ? series.shadowSize : 0;
-        if(shadowOffset > 0) {
-            shadowColor = "rgba(0,0,0,0.1)";
-            ctx.lineWidth = series.lineWidth * 2;
-            drawBoxWhisker(shadowColor, shadowColor, s_x+shadowOffset, s_w, s_min+shadowOffset, s_lq+shadowOffset, s_med+shadowOffset, s_uq+shadowOffset, s_max+shadowOffset);
-            ctx.lineWidth = series.lineWidth;
-            drawBoxWhisker(shadowColor, shadowColor, s_x+shadowOffset, s_w, s_min+shadowOffset, s_lq+shadowOffset, s_med+shadowOffset, s_uq+shadowOffset, s_max+shadowOffset);
-        }
+        
         var col = series.color;
         if (!series.boxwhisker.useColor)
         {
-            col = "rgba(255,255,255,1)";
+            col = "rgba(170,70,67,0.5)";
         }
         ctx.lineWidth = series.lineWidth;
         drawBoxWhisker("rgba(0,0,0,1)", col, s_x, s_w, s_min, s_lq, s_med, s_uq, s_max);
