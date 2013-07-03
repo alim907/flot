@@ -5,7 +5,7 @@
     var show = false;
 
     function processRawData(plot, series, data, datapoints) {
-       if(series.boxwhisker.show) {
+       if(show) {
            for (var i = 0; i < data.length; ++i) {
                data[i][0] = count;
            }
@@ -26,7 +26,7 @@
     }
 
     function processDatapoints(plot, series, datapoints) {
-        if (series.boxwhisker.show) {
+        if (show) {
             series["xaxis"].options.ticks = boxWhiskerTickGenerator;
         }
     }
