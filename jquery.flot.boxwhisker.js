@@ -83,7 +83,8 @@
         ctx.lineWidth = series.lineWidth;
         drawBoxWhisker("rgba(0,0,0,1)", col, s_x, s_w, s_min, s_lq, s_med, s_uq, s_max);
 
-        ctx.restore()
+        ctx.restore();
+        show = false;
     }
     
     plot.hooks.processOptions.push(checkBoxWhiskerEnabled);
