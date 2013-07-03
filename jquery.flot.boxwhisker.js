@@ -98,7 +98,8 @@
         show: false,
         useColor: true,
         boxWidth: 0.4,
-        lineWidth: 0.5
+        lineWidth: 0.5,
+        hoverable: false
       }
     }
   };	
