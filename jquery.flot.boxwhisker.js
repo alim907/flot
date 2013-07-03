@@ -34,6 +34,9 @@
     function checkBoxWhiskerEnabled(plot, options) {
         if (options.series.boxwhisker.show) {
             show = true;
+             plot.hooks.processRawData.push(processRawData);
+             plot.hooks.processDatapoints.push(processDatapoints);
+             plot.hooks.drawSeries.push(drawSeries);
         }
     }
 
@@ -87,9 +90,6 @@
     }
     
     plot.hooks.processOptions.push(checkBoxWhiskerEnabled);
-    plot.hooks.processRawData.push(processRawData);
-    plot.hooks.processDatapoints.push(processDatapoints);
-    plot.hooks.drawSeries.push(drawSeries);
   }
 
   var options = {
