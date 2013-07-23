@@ -81,7 +81,7 @@
         var col = series.color;
         if (!series.boxwhisker.useColor)
         {
-            col = "rgba(170,70,67,0.5)";
+            col = "rgba(140,21,21,0.5)";
         }
         ctx.lineWidth = series.lineWidth;
         drawBoxWhisker("rgba(0,0,0,1)", col, s_x, s_w, s_min, s_lq, s_med, s_uq, s_max);
